@@ -48,7 +48,7 @@ export function HomeScreen({navigation}){
 
             <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#8548BE', '#054AA5']} style={{paddingVertical:20, paddingHorizontal:15}}>
                 <FontAwesome5 name='bars' color='white' size={30} style={{position:'absolute', top:18, left:20}}/>
-                <Text style={{alignSelf:'center', fontSize:20, fontWeight:'bold', color:'white', }}>STORE</Text>
+                <Text style={{alignSelf:'center', fontSize:20, fontWeight:'bold', color:'white', }} onPress={() => navigation.navigate('Redux')}>STORE</Text>
                 <FontAwesome5 name='camera' color='white' size={30} style={{position:'absolute', top:18, right:20}} onPress={() => navigation.navigate('Upload')}/>
             </LinearGradient>    
 

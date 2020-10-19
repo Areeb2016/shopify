@@ -7,9 +7,9 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import {connect} from 'react-redux'
 import {addFood} from '../redux/actions/food'
 
-function ReduxScreen({navigation, props}){
+function ReduxScreen(props){
     console.log("HRTT", props)
-    const [food, setFood] = useState('')
+    const [food, setFood] = useState(null)
 
     return(
         <LinearGradient colors={['#054AA5', '#8548BE', '#8548BE']} useAngle={true} angle={45} angleCenter={{x:0.5, y:0.5}} style={styles.linearGradient}>
@@ -30,15 +30,14 @@ function ReduxScreen({navigation, props}){
             </View>
            
             <FlatList style={{marginTop:5}}
-                    data = {props}
-                    showsHorizontalScrollIndicator={false}
+                    data = {props.foods}
                     keyExtractor={(item, index) => index.toString()}
                     horizontal={true}
                     renderItem = {({item, index}) => {
                     return(
                     <View>
                         <Card>
-                            <Text style={{color:'#054AA5', fontSize:12}}>Rs.{item.name}</Text>
+                            <Text style={{color:'#054AA5', fontSize:12}}>{item.name}</Text>
                         </Card>
                     </View>
                     )}}
